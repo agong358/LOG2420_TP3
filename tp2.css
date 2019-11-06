@@ -1,0 +1,165 @@
+/*
+" border-box tells the browser to account for any border and padding in the values you 
+specify for an element's width and height. If you set an element's width to 100 pixels,
+that 100 pixels will include any border or padding you added, and the content box will 
+shrink to absorb that extra width. This typically makes it much easier to size elements."
+- developper.mozilla
+*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*bold when navigation bar item is clicked on */ 
+li a:focus{
+  font-weight: bold;
+}
+
+select:hover{
+  background: rgb(242, 242, 242);
+}
+
+select {
+  width: 100%;
+  /*to center text in select box (found from Stack Overflow*/
+  text-align-last: center;
+  background: rgb(236, 236, 236);
+  border-radius: 3px;
+  padding: 3px;
+}
+
+header {
+  border: none;
+  padding: 15px;
+  background-color:#666;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}
+
+/* added padding top and left to anchor it */ 
+ul {
+  list-style-type: none;
+  padding-left: 20px; 
+  padding-top: 20px; 
+}
+
+nav { 
+  width: 15%;
+  height: 350px;
+  background: #ccc;
+  float: left;
+}
+
+footer {
+  clear: both;    /* trouve sur stack overflow*/
+                  /*empeche que le footer overlap*/
+  background-color: #666;
+  height: 20px;
+}
+
+.input-col1, .input-col2, .input-col3 {
+  float: left;
+  width: 28%;
+  padding: 10px;
+}
+
+#inputs {
+  width: auto;
+}
+
+.input-field {
+  border: 2px solid black;
+  margin-top: 10px;
+  padding: 0px;
+}
+
+/* fonctionne egalement avec simplement .company*/
+.alpha, .beta, .gamma, .epsilon, .mobile, .iota, .theta, .kappa {
+  color: white;
+  text-align: center;
+  padding-top: 2px;  /* added a lil padding on top*/
+} 
+
+.alpha {
+  background-color: #800000;
+}
+
+.beta {
+  background-color: #ff8533;
+}
+
+.gamma {
+  background-color: #ffcc66;
+}
+
+.epsilon {
+  background-color: #0099ff;   
+}
+
+.mobile {
+  background-color: #000066;
+}
+
+.iota {
+  background-color: #400080;
+}
+
+.theta {
+  background-color: #ff00ff;
+}
+
+.kappa {
+  background-color: #000000;
+}
+
+table, th, td {
+  text-align: center;
+  padding: 3px;
+}
+
+table {
+  width: 85%;
+}
+
+.blank_row
+{
+  height: 10px !important; /* overwrites any other rules */
+  background-color: #FFFFFF;
+}
+
+#output {
+  max-width: 100%;
+  height: auto;
+  padding: 5px;
+}
+
+img {
+  width: 80%;
+  height: auto;
+  border: solid;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  nav {
+    margin: 0px;
+    height: 60px;
+    width: 100%;
+  }
+
+  nav ul li {
+    float: left;
+    display: block;
+    width: 100px;
+  }
+
+  header {
+    font-size: 16px;
+  }
+}
+
