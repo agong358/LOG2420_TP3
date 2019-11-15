@@ -29,18 +29,18 @@
                 <td class="column3">UNLIMITED TARIFF</td>
               </tr>
               <tr><td>
-                <select name="select">
-                  <option selected disabled = "disabled">Choose a value</option>
-                  <option value="-40%">-40%</option>
-                  <option value="-30%">-30%</option>
-                  <option value="-20%">-20%</option>
-                  <option value="-10%">-10%</option>
-                  <option value="0%" >0%</option>
-                  <option value="10%">10%</option>
-                  <option value="20%">20%</option>
-                  <option value="30%">30%</option>
-                  <option value="40%">40%</option>
-                </select>
+                  <select name="select">
+                    <option selected disabled = "disabled">Choose a value</option>
+                    <option value="-40%">-40%</option>
+                    <option value="-30%">-30%</option>
+                    <option value="-20%">-20%</option>
+                    <option value="-10%">-10%</option>
+                    <option value="0%" >0%</option>
+                    <option value="10%">10%</option>
+                    <option value="20%">20%</option>
+                    <option value="30%">30%</option>
+                    <option value="40%">40%</option>
+                  </select>
               </td>
               <td>
                 <select>
@@ -247,10 +247,10 @@
       <div class="vertical-line"></div>
       <div id="side-right">
         <div class="tab">
-          <button class="tabButton" onclick="openTab('circDiagram')">Circular Diagram</button>
+          <button class="tabButton" onclick="openTab('circDiagram',event)">Circular Diagram</button>
           <!-- <button class="tabButton" onclick="optenTab('histog')">Histogram</button> -->
-          <button class="tabButton" onclick="openTab('histog')">Histogram</button>
-          <button class="tabButton" onclick="openTab('table')">Table</button>
+          <button class="tabButton" onclick="openTab('histog', event)">Histogram</button>
+          <button class="tabButton" onclick="openTab('table', event)">Table</button>
 
         </div>
         <div id="circDiagram" class="tab_content">
@@ -262,24 +262,12 @@
           </div>
           
         <div id="table" class="tab_content">
-          <p>-_-</p>
         </div>
       </div>
     </div>
               
     <footer></footer>
-    <script>
-        function openTab(cityName) {
-          tabcontent = document.getElementsByClassName("tab_content");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
-        
-          document.getElementById(cityName).style.display = "block";
-        }
-    </script>
-
-    <script src="../JS/inputs.js"></script>
+ 
     <script src="../tp2.js"></script>
 
   </body>

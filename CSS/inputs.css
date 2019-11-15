@@ -1,6 +1,11 @@
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
 
   html, body {
     font-family: Arial, Helvetica, sans-serif;
@@ -14,12 +19,12 @@
     color: white;
     text-align: center;
   }
-  
- h3 {
-    text-align: center;
-    font-weight: 300;
-    margin-top: 0;
-  }
+    
+  h3 {
+      text-align: center;
+      font-weight: 300;
+      margin-top: 0;
+    }
   
   .container {
     background: beige;
@@ -54,6 +59,7 @@
     background-color: white;
   }
 
+  /* stackoverflow */
   table td, table th {
     border: 1px solid black;
   }
@@ -125,34 +131,42 @@
 
   .column3 {
     width: 33%;
+    background-color: #d9d9d9;
   }
 
   .column2 {
     width: 50%;
+    background-color: #d9d9d9;
+  }
+
+  .company_name{
+    background-color: #b3b3b3;
   }
 
   select {
     width: 100%;
     /*to center text in select box (found from Stack Overflow*/
-    text-align-last: center;;
+    text-align-last: center;
+  }
+
+  select:hover {
+    background: rgb(242, 242, 242);
   }
 
   #competitors {
     height: 70%;
   }
-
-  #reset{
-    float: right;
-  }
-
-  #submit {
-    float: left;
-  }
   
-  #reset, #submit {
+  #reset {
+    float: right;
     margin-right: 30px;
     border-radius: 5px;
     margin-top: 10px;
+    padding: 8px;
+  }
+
+  #reset:hover{
+    background-color: #bfbfbf;
   }
 
   .tab {
@@ -161,24 +175,25 @@
   }
   
   .tab button {
-    background-color: inherit;
     float: left;
     outline: none;
     padding: 14px 16px;
     font-size: 17px;
+    border: 1px solid gray;
   }
 
   .tab button:hover {
-    background-color: #ddd;
+    background-color: #cccccc;
   }
 
   .tab button.active {
-    background-color: #ccc;
+    background-color: #bfbfbf;
   }
 
+
   .tab_content {
-    margin-top: 20px;
-    height: 97%;
+    margin-top: 60px;
+    height: auto;
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
