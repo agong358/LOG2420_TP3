@@ -13,9 +13,18 @@ function panel(show, hide) {
   document.getElementById(hide).style.display = "none";
 }
 
-fetchImages("fig3");    // Sets the initial image with fetch (see function below)
+fetchTable("jsonTable");    // Sets the initial json table with fetch (see function below)
 
+var isReset = true; //condition to show a reset table or not
 var count = 1;  // Counter for switchOutput()
+
+function randomizeTable(table, reset) {
+  if (reset)  //if want reset, return actual table
+    return (table);
+
+  //if input changed, return randomized table value fixed to 2 decimals.
+  return ((table * Math.random()).toFixed(2));  
+}
 
 /**
  * Toggles between the JSON table and figure 4 (picture "Mise à jour") 
@@ -28,6 +37,8 @@ var count = 1;  // Counter for switchOutput()
  * Uses the functions panel(show, hide) and fetchTable(output).
  */
 function switchOutput() {   
+  fetchTable("jsonTable");
+  /*
   if (count % 2) {   
     panel("jsonTable", "fig");  
     fetchTable("jsonTable");  
@@ -39,6 +50,7 @@ function switchOutput() {
   }
 
   count += 1;
+  */
 }
 
 /* Waits until the HTML document has been completely loaded and parsed 
@@ -96,6 +108,8 @@ function fetchImages(figure) {
  * @param {String} elementID ID of the place to display the JSON data
  */
 function fetchTable(elementID) {
+  isReset = false;  //table values will be different
+
   // Fetch request for the URL for the json
   fetch('http://localhost:8080/JSON/output2.json')  
   .then(response => {
@@ -152,13 +166,11 @@ function fetchTable(elementID) {
             || types[j] == 'Volume.Scenario.Recontract' 
             || types[j] == 'Volume.Baseline.NewCustomers' 
             || types[j] == 'Volume.Scenario.NewCustomers') {
-          table += "<td>" + consumerSegment[i][types[j]] * 100 + "% </td>";
+              table += "<td>" + (randomizeTable(consumerSegment[i][types[j]], isReset) * 100).toFixed(2) + "% </td>";
         }
 
-        else {            
-          table += "<td>" + consumerSegment[i][types[j]] + "</td>";
-        }
-
+        else          
+          table += "<td>" + randomizeTable(consumerSegment[i][types[j]], isReset)+ "</td>";
       }
 
       // Closing the row
@@ -182,17 +194,13 @@ function fetchTable(elementID) {
             || types[j] == 'Volume.Scenario.Recontract' 
             || types[j] == 'Volume.Baseline.NewCustomers' 
             || types[j] == 'Volume.Scenario.NewCustomers') {
-          table += "<td>" + estimatedUsage[i][types[j]] * 100 + "% </td>";
+            
+              table += "<td>" + (randomizeTable(estimatedUsage[i][types[j]], isReset) * 100).toFixed(2) + "% </td>";
         }
-
-        else {            
-          table += "<td>" + estimatedUsage[i][types[j]] + "</td>";
-        }
-
+        else         
+          table += "<td>" + randomizeTable(estimatedUsage[i][types[j]], isReset)  + "</td>";
       }
-      
       table += "</tr>";
-
     }
     
     // Closing the table
