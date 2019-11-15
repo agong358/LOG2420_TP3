@@ -13,10 +13,9 @@ function panel(show, hide) {
   document.getElementById(hide).style.display = "none";
 }
 
-fetchTable("jsonTable");    // Sets the initial json table with fetch (see function below)
-
 var isReset = true; //condition to show a reset table or not
 var count = 1;  // Counter for switchOutput()
+fetchTable("table");    // Sets the initial json table with fetch (see function below)
 
 function randomizeTable(table, reset) {
   if (reset)  //if want reset, return actual table
@@ -25,91 +24,25 @@ function randomizeTable(table, reset) {
   //if input changed, return randomized table value fixed to 2 decimals.
   return ((table * Math.random()).toFixed(2));  
 }
-
-/**
- * Toggles between the JSON table and figure 4 (picture "Mise à jour") 
- * depending on the counter:if counter is odd, JSON table is displayed; 
- * otherwise, fig4 is displayed.
- *
- * switchOutput() is called whenever there is a onChange event of a <select> 
- * element in "Inputs".
- * 
- * Uses the functions panel(show, hide) and fetchTable(output).
- */
-function switchOutput() {   
-  fetchTable("jsonTable");
-  /*
-  if (count % 2) {   
-    panel("jsonTable", "fig");  
-    fetchTable("jsonTable");  
-  }
-
-  else {
-    panel("fig", "jsonTable");
-    fetchImages("fig4");
-  }
-
-  count += 1;
-  */
-}
-
 /* Waits until the HTML document has been completely loaded and parsed 
 before executing the following functions */
 document.addEventListener("DOMContentLoaded", function() { 
   (function() {
-    var inputElements = document.getElementsByClassName("input-field");
+    var inputElements = document.getElementsByClassName("inputs");
+    console.log(inputElements)
       for (var i = 0; i < inputElements.length; i++) {
-        inputElements[i].addEventListener("change", switchOutput);
+        inputElements[i].addEventListener("change", function() {
+          fetchTable("table");
+        });
       }
     })();
-  
-    // document.addEventListenter method to replace onclick()
-    document.getElementById("navinput").addEventListener("click", function() {
-      panel('inputs', 'output');
-    });
-
-    document.getElementById("navoutput").addEventListener("click", function(){
-      panel('output', 'inputs');
-    });
 });
-
-/**
- * Fetches images and displays it at element ID "fig".
- * @param {String} figure Figure to be displayed
- */
-function fetchImages(figure) {
-  var imageFig = document.getElementById("fig");  
-
-  // Selects between fig3 or fig4
-  if (figure == 'fig3') {
-    var link = 'http://localhost:8080/Images/fig3.png';
-  }
-
-  else {
-    var link = 'http://localhost:8080/Images/fig4.png';
-  }
-
-  // Fetch request for the figure
-  fetch(link)
-  .then(response => response.blob())
-
-  .then(image => {
-    // Updates the image src with the URL created by fetch
-    imageFig.src = URL.createObjectURL(image);  
-  })
-
-  .catch(err => {
-    document.getElementById("output").innerHTML = err; 
-  });
-}
 
 /**
  * Fetches the JSON data and displays it as a HTML table at elementID.
  * @param {String} elementID ID of the place to display the JSON data
  */
 function fetchTable(elementID) {
-  isReset = false;  //table values will be different
-
   // Fetch request for the URL for the json
   fetch('http://localhost:8080/JSON/output2.json')  
   .then(response => {
@@ -208,6 +141,7 @@ function fetchTable(elementID) {
 
     // Displays the JSON table as output
     document.getElementById(elementID).innerHTML = table; 
+    isReset = false;  //table values will be different
   })
   
   // Displays the error
