@@ -133,16 +133,16 @@
   }
   
   .price_prioritisers {
-    background-color:#c45850;
+    background-color:#777;
   }
   
   .hesitant_homebodies {
-    background-color:  #777;
+    background-color:  #cccccc;
   }
 
   .column3 {
     width: 33%;
-    background-color: #cccccc;
+    background-color: #fff;
   }
 
   select {
@@ -165,7 +165,7 @@
 
   .column2 {
     width: 50%;
-    background-color: #cccccc;
+    background-color: #fff;
   }
 
   #competitors {

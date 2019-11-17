@@ -289,7 +289,7 @@ function createChart(consumerSeg, estimatedUsage, randomize, reset) {
                     'Hesitant Homebodies'],
                 datasets: [{
                     label: "Hey",
-                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850,  #ff0000"],
+                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#fff,  #ff0000"],
                     data: array
                 }]
             },
