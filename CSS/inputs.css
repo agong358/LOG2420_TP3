@@ -190,10 +190,6 @@
     color: red;
   }
 
-  #circDiagram {
-    height: 715px;
-  }
-
   /*s'agit du id d'un des onglets; ne pas se melanger avec le tag table*/
   #table {
     height: auto;
@@ -208,10 +204,10 @@
     border-top: none;
   }
 
-  @media (max-width: 600px) {
+  /* @media (max-width: 600px) {
     body {
         overflow-x: auto;
-    }
+    } */
 }
   
  
