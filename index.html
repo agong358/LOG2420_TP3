@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>My Chart</title>
+  <style>
+    #graphe{
+      float: right;
+      position: relative;
+      width: 60%;
+      height: 100%;
+      padding: 0 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <button id="barDiagram"> Diagramme a bande </button>
+
+      <select id="activitySelector">
+        <option value="null">Select Value</option>
+        <option value="Population">Population</option>
+        <option value="Volume_Baseline_Recontract">Volume Baseline Recontract</option>
+        <option value="ARPU_Baseline_Recontract">ARPU Baseline Recontract</option>
+        <option value="Volume_Scenario_Recontract">Volume Scenario Recontract</option>
+        <option value="ARPU_Scenario_Recontract">ARPU Scenario Recontract</option>
+        <option value="Volume_Baseline_NewCustomers">Volume Baseline NewCustomers</option>
+        <option value="ARPU_Baseline_NewCustomers">ARPU Baseline NewCustomers</option>
+        <option value="Volume_Scenario_NewCustomers">Volume Scenario NewCustomers</option>
+        <option value="ARPU_Scenario_NewCustomers">ARPU Scenario NewCustomers</option>
+      </select>
+    </div>
+    <div id="graphe">
+    <canvas id="myChart2"></canvas>
+    <canvas height= "300" id="myChart"></canvas>
+  </div>
+  </div>
+
+</body>
+
+</html>

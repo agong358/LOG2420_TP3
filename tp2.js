@@ -1,7 +1,11 @@
+var imported = document.createElement('script');
+imported.src = '../graphe.js';
+document.head.appendChild(imported);
+
 
 var isReset = true; //condition to show a reset table or not
 var count = 1;  // Counter for switchOutput()
-fetchTable("table");    // Sets the initial json table with fetch (see function below)
+fetchTable("table", false);    // Sets the initial json table with fetch (see function below)
 
 function resetSelect() {
   var selections = document.getElementsByTagName("select");
@@ -10,7 +14,7 @@ function resetSelect() {
       selections[i].selectedIndex = 0;
   }
   isReset = true;
-  fetchTable("table");
+  fetchTable("table", false);
 }
 
 function randomizeTable(table, reset) {
@@ -28,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var inputElements = document.getElementsByClassName("inputs");
     for (var i = 0; i < inputElements.length; i++) {
       inputElements[i].addEventListener("change", function() {
-        fetchTable("table");
+        fetchTable("table", true);
       });
     }
 
@@ -57,7 +61,7 @@ function openTab(tabName, evt) {
  * Fetches the JSON data and displays it as a HTML table at elementID.
  * @param {String} elementID ID of the place to display the JSON data
  */
-function fetchTable(elementID) {
+function fetchTable(elementID, randomized) {
   // Fetch request for the URL for the json
   fetch('http://localhost:8080/JSON/output2.json')  
   .then(response => {
@@ -68,6 +72,7 @@ function fetchTable(elementID) {
     let consumerSegment = data['consumer.segment'];
     let estimatedUsage = data['estimated.usage'];
 
+    createChart(consumerSegment, estimatedUsage, randomized, !randomized)
     // Stores the different types in an array
     let types = [ 'Population','Volume.Baseline.Recontract', 'ARPU.Baseline.Recontract',
                   'Volume.Scenario.Recontract','ARPU.Scenario.Recontract',
@@ -157,6 +162,9 @@ function fetchTable(elementID) {
     // Displays the JSON table as output
     document.getElementById(elementID).innerHTML = table; 
     isReset = false;  //table values will be different
+
+    //Display graphe 
+    
   })
   
   // Displays the error
