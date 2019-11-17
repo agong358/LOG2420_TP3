@@ -36,29 +36,29 @@ function createChart(consumerSeg, estimatedUsage, randomize, reset) {
 
     if (randomize === true) {
         consumerSeg.forEach(obj => {
-            Volume_Baseline_Recontract.push(randomizeTable(obj["Volume.Baseline.Recontract"], reset))
-            Population.push(randomizeTable(obj["Population"], reset))
-            ARPU_Baseline_Recontract.push(randomizeTable(obj["ARPU.Baseline.Recontract"]), reset)
-            Volume_Scenario_Recontract.push(randomizeTable(obj["Volume.Scenario.Recontract"], reset))
-            ARPU_Scenario_Recontract.push(randomizeTable(obj["ARPU.Scenario.Recontract"], reset))
-            Volume_Baseline_NewCustomers.push(randomizeTable(obj["Volume.Baseline.NewCustomers"], reset))
-            ARPU_Baseline_NewCustomers.push(randomizeTable(obj["ARPU.Baseline.NewCustomers"], reset))
-            Volume_Scenario_NewCustomers.push(randomizeTable(obj["Volume.Scenario.NewCustomers"], reset))
-            ARPU_Scenario_NewCustomers.push(randomizeTable(obj["ARPU.Scenario.NewCustomers"], reset))
+            Volume_Baseline_Recontract.push(randomizeTable(obj["Volume.Baseline.Recontract"], reset));
+            Population.push(randomizeTable(obj["Population"], reset));
+            ARPU_Baseline_Recontract.push(randomizeTable(obj["ARPU.Baseline.Recontract"]), reset);
+            Volume_Scenario_Recontract.push(randomizeTable(obj["Volume.Scenario.Recontract"], reset));
+            ARPU_Scenario_Recontract.push(randomizeTable(obj["ARPU.Scenario.Recontract"], reset));
+            Volume_Baseline_NewCustomers.push(randomizeTable(obj["Volume.Baseline.NewCustomers"], reset));
+            ARPU_Baseline_NewCustomers.push(randomizeTable(obj["ARPU.Baseline.NewCustomers"], reset));
+            Volume_Scenario_NewCustomers.push(randomizeTable(obj["Volume.Scenario.NewCustomers"], reset));
+            ARPU_Scenario_NewCustomers.push(randomizeTable(obj["ARPU.Scenario.NewCustomers"], reset));
         })
     }
 
     else {
         consumerSeg.forEach(obj => {
-            Volume_Baseline_Recontract.push(obj["Volume.Baseline.Recontract"])
-            Population.push(obj["Population"])
-            ARPU_Baseline_Recontract.push(obj["ARPU.Baseline.Recontract"])
-            Volume_Scenario_Recontract.push(obj["Volume.Scenario.Recontract"])
-            ARPU_Scenario_Recontract.push(obj["ARPU.Scenario.Recontract"])
-            Volume_Baseline_NewCustomers.push(obj["Volume.Baseline.NewCustomers"])
-            ARPU_Baseline_NewCustomers.push(obj["ARPU.Baseline.NewCustomers"])
-            Volume_Scenario_NewCustomers.push(obj["Volume.Scenario.NewCustomers"])
-            ARPU_Scenario_NewCustomers.push(obj["ARPU.Scenario.NewCustomers"])
+            Volume_Baseline_Recontract.push(obj["Volume.Baseline.Recontract"]);
+            Population.push(obj["Population"]);
+            ARPU_Baseline_Recontract.push(obj["ARPU.Baseline.Recontract"]);
+            Volume_Scenario_Recontract.push(obj["Volume.Scenario.Recontract"]);
+            ARPU_Scenario_Recontract.push(obj["ARPU.Scenario.Recontract"]);
+            Volume_Baseline_NewCustomers.push(obj["Volume.Baseline.NewCustomers"]);
+            ARPU_Baseline_NewCustomers.push(obj["ARPU.Baseline.NewCustomers"]);
+            Volume_Scenario_NewCustomers.push(obj["Volume.Scenario.NewCustomers"]);
+            ARPU_Scenario_NewCustomers.push(obj["ARPU.Scenario.NewCustomers"]);
         })
     }
 
@@ -73,22 +73,22 @@ function createChart(consumerSeg, estimatedUsage, randomize, reset) {
     function conversionWithMax(array) {
         var max = 0;
         for (var i = 0; i < array.length; i++) {
-            max += array[i]
+            max += array[i];
         }
         for (var i = 0; i < array.length; i++) {
             array[i] = (array[i] * 100) / max;
         }
     }
 
-    conversion(Population)
-    conversion(Volume_Baseline_Recontract)
-    conversionWithMax(ARPU_Baseline_Recontract)
-    conversion(Volume_Scenario_Recontract)
-    conversionWithMax(ARPU_Scenario_Recontract)
-    conversion(Volume_Baseline_NewCustomers)
-    conversionWithMax(ARPU_Baseline_NewCustomers)
-    conversion(Volume_Scenario_NewCustomers)
-    conversionWithMax(ARPU_Scenario_NewCustomers)
+    conversion(Population);
+    conversion(Volume_Baseline_Recontract);
+    conversionWithMax(ARPU_Baseline_Recontract);
+    conversion(Volume_Scenario_Recontract);
+    conversionWithMax(ARPU_Scenario_Recontract);
+    conversion(Volume_Baseline_NewCustomers);
+    conversionWithMax(ARPU_Baseline_NewCustomers);
+    conversion(Volume_Scenario_NewCustomers);
+    conversionWithMax(ARPU_Scenario_NewCustomers);
 
     // Global Options
     Chart.defaults.global.defaultFontFamily = 'Arial';
@@ -97,61 +97,61 @@ function createChart(consumerSeg, estimatedUsage, randomize, reset) {
 
     // When the user inputs something, a pie chart and a histogram are generated
     document.getElementById("side-left").addEventListener("change", function () {
-        barDiagram()
-        createPieChart()
+        barDiagram();
+        createPieChart();
     })
 
     // Histrogram is generated and appears when the "Histogram" is selected
     document.getElementById("barDiagram").addEventListener("click", function () {
-        barDiagram()
+        barDiagram();
     })
 
     // Pie chart is generated and appears when the "Circular Diagram" is selected
     var select = document.getElementById("activitySelector");
     select.addEventListener("change", function () {
-        createPieChart()
+        createPieChart();
     })
 
     // A new histogram is generated
     //let massPopChart
     function barDiagram() {
-        myChart && myChart.destroy()
-        myChart = new Chart(context, data_)
+        myChart && myChart.destroy();
+        myChart = new Chart(context, data_);
     }
 
     // A new pie chart is generated depending on the user's selection
     function createPieChart(){
-            switch (select.value) {
-                case "Population":
-                    afficherDiagrammeCirculaire(Population)
-                    break;
-                case "Volume_Baseline_Recontract":
-                    afficherDiagrammeCirculaire(Volume_Baseline_Recontract)
-                    break;
-                case "ARPU_Baseline_Recontract":
-                    afficherDiagrammeCirculaire(ARPU_Baseline_Recontract)
-                    break;
-                case "Volume_Scenario_Recontract": 
-                    afficherDiagrammeCirculaire(Volume_Scenario_Recontract)
-                    break;
-                case "ARPU_Scenario_Recontract":
-                    afficherDiagrammeCirculaire(ARPU_Scenario_Recontract)
-                    break;
-                case "Volume_Baseline_NewCustomers":
-                    afficherDiagrammeCirculaire(Volume_Baseline_NewCustomers)
-                    break;
-                case "ARPU_Baseline_NewCustomers":
-                    afficherDiagrammeCirculaire(ARPU_Baseline_NewCustomers)
-                    break;
-                case "Volume_Scenario_NewCustomers":
-                    afficherDiagrammeCirculaire(Volume_Scenario_NewCustomers)
-                    break;
-                case "ARPU_Scenario_NewCustomers":
-                    afficherDiagrammeCirculaire(ARPU_Scenario_NewCustomers)
-                    break;
-                default:
-                // code block
-            }
+        switch (select.value) {
+            case "Population":
+                afficherDiagrammeCirculaire(Population);
+                break;
+            case "Volume_Baseline_Recontract":
+                afficherDiagrammeCirculaire(Volume_Baseline_Recontract);
+                break;
+            case "ARPU_Baseline_Recontract":
+                afficherDiagrammeCirculaire(ARPU_Baseline_Recontract);
+                break;
+            case "Volume_Scenario_Recontract": 
+                afficherDiagrammeCirculaire(Volume_Scenario_Recontract);
+                break;
+            case "ARPU_Scenario_Recontract":
+                afficherDiagrammeCirculaire(ARPU_Scenario_Recontract);
+                break;
+            case "Volume_Baseline_NewCustomers":
+                afficherDiagrammeCirculaire(Volume_Baseline_NewCustomers);
+                break;
+            case "ARPU_Baseline_NewCustomers":
+                afficherDiagrammeCirculaire(ARPU_Baseline_NewCustomers);
+                break;
+            case "Volume_Scenario_NewCustomers":
+                afficherDiagrammeCirculaire(Volume_Scenario_NewCustomers);
+                break;
+            case "ARPU_Scenario_NewCustomers":
+                afficherDiagrammeCirculaire(ARPU_Scenario_NewCustomers);
+                break;
+            default:
+            // code block
+        }
     }
     
     // Styling the histogram
@@ -278,7 +278,7 @@ function createChart(consumerSeg, estimatedUsage, randomize, reset) {
                 enabled:  true
             }
         }
-    }   
+    };  
     
     // To display the pie chart
     function afficherDiagrammeCirculaire(array) {
@@ -300,11 +300,8 @@ function createChart(consumerSeg, estimatedUsage, randomize, reset) {
                     fontSize: 25
                 }
             }
-        }
-
-        myChart2 && myChart2.destroy()
+        };
+        myChart2 && myChart2.destroy();
         myChart2 = new Chart(context2, data2_);
-        
     }
-
 }
