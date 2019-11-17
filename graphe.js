@@ -65,7 +65,7 @@ function createChart(consumerSeg, estimatedUsage, randomize, reset) {
     // Conversions in percentage
     function conversion(array) {
         for (var i = 0; i < array.length; i++) {
-            array[i] = (array[i] * 100);
+            array[i] = ((array[i] * 100)).toFixed(2);
         }
     }
 
@@ -76,7 +76,7 @@ function createChart(consumerSeg, estimatedUsage, randomize, reset) {
             max += array[i];
         }
         for (var i = 0; i < array.length; i++) {
-            array[i] = ((array[i] * 100) / max);
+            array[i] = ((array[i] * 100) / max).toFixed(2);
         }
     }
 
