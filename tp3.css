@@ -15,7 +15,7 @@
 
   header {
     padding: 15px;
-    background-color:#666;
+    background-color:#ffa500;
     font-size: 20px;
     color: white;
     text-align: center;
@@ -68,7 +68,7 @@
     padding-bottom: 10px;
     padding-left: 18px;
     padding-right: 18px;
-    background-color:#666;
+    background-color: #ffa500;
     font-size: 20px;
     color: white;
     text-align: center;
@@ -109,9 +109,35 @@
   table tr th:last-child {
     border-right: 0;
   }
+
+
+  /*['Digital Dynamos', 'Top-end Techtastics', 'Indulgent Imitators', 'Savvy Surfers', 'Price Prioritisers',
+                    'Hesitant Homebodies'],
+
+                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+*/
+  .digital_dynamos {
+    background-color: #3e95cd;
+  }
   
-  .company_name{
-    background-color: #b3b3b3;
+  .top_end_techtastics {
+    background-color: #8e5ea2;
+  }
+  
+  .indulgent_imitators {
+    background-color: #3cba9f;
+  }
+  
+  .savvy_surfers {
+    background-color: #e8c3b9; 
+  }
+  
+  .price_prioritisers {
+    background-color:#c45850;
+  }
+  
+  .hesitant_homebodies {
+    background-color:  #777;
   }
 
   .column3 {

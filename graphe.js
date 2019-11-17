@@ -76,7 +76,7 @@ function createChart(consumerSeg, estimatedUsage, randomize, reset) {
             max += array[i];
         }
         for (var i = 0; i < array.length; i++) {
-            array[i] = (array[i] * 100) / max;
+            array[i] = ((array[i] * 100) / max);
         }
     }
 
@@ -289,7 +289,7 @@ function createChart(consumerSeg, estimatedUsage, randomize, reset) {
                     'Hesitant Homebodies'],
                 datasets: [{
                     label: "Hey",
-                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850,  #ff0000"],
                     data: array
                 }]
             },
