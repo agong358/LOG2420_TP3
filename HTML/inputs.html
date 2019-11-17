@@ -3,10 +3,7 @@
 
 <head>
   <title>Scénario d'élasticité-prix</title>
-  <!-- Specifies the character encoding for Unicode. -->
   <meta charset="utf-8">
-  <!-- Without a viewport meta tag, mobile devices render pages at typical 
-      desktop screen widths, and then scale the pages to fit the mobile screens -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../CSS/inputs.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
@@ -19,7 +16,6 @@
     <h2>Scénario d'élasticité-prix</h2>
   </header>
 
-  <!-- <div id="main-container"> -->
   <div class="container">
     <div id="side-left">
       <div id="host">
@@ -68,223 +64,221 @@
               </td>
             </tr>
           </table>
-          <pre id="output"></pre>
         </div>
       </div>
 
+      <div id="company-separator"></div>
+
       <div id="competitors">
         <div class="section_title">COMPETITORS</div>
-        <div id="scrollbar">
-          <div class="inputs">
-            <table>
-              <tr>
-                <td colspan="2" class="company_name">BETA</td>
-              </tr>
-              <tr>
-                <td class="column2">PRICE SHIFT</td>
-                <td class="column2">UNLIMITED TARIFF</td>
-              </tr>
-              <tr>
-                <td>
-                  <select>
-                    <option selected disabled="disabled">Choose a value</option>
-                    <option value="-40%">-40%</option>
-                    <option value="-30%">-30%</option>
-                    <option value="-20%">-20%</option>
-                    <option value="-10%">-10%</option>
-                    <option value="0%">0%</option>
-                  </select>
-                </td>
-                <td>
-                  <select>
-                    <option selected disabled="disabled">Choose a value</option>
-                    <option value="available at £5">available at 5£</option>
-                    <option value="available at £10">available at £10</option>
-                  </select>
-                </td>
-              </tr>
-            </table>
-            <table>
-              <tr>
-                <td colspan="2" class="company_name">GAMMA</td>
-              </tr>
-              <tr>
-                <td class="column2">PRICE SHIFT</td>
-                <td class="column2">UNLIMITED TARIFF</td>
-              </tr>
-              <tr>
-                <td>
-                  <select>
-                    <option selected disabled="disabled">Choose a value</option>
-                    <option value="-40%">-40%</option>
-                    <option value="-30%">-30%</option>
-                    <option value="-20%">-20%</option>
-                    <option value="-10%">-10%</option>
-                    <option value="0%">0%</option>
-                  </select>
-                </td>
-                <td>
-                  <select>
-                    <option selected disabled="disabled">Choose a value</option>
-                    <option value="available at £5">available at 5£</option>
-                    <option value="available at £10">available at £10</option>
-                  </select>
-                </td>
-              </tr>
-            </table>
-            <table>
-              <tr>
-                <td colspan="2" class="company_name">EPSILON</td>
-              </tr>
-              <tr>
-                <td class="column2">PRICE SHIFT</td>
-                <td class="column2">UNLIMITED TARIFF</td>
-              </tr>
-              <tr>
-                <td>
-                  <select>
-                    <option selected disabled="disabled">Choose a value</option>
-                    <option value="-40%">-40%</option>
-                    <option value="-30%">-30%</option>
-                    <option value="-20%">-20%</option>
-                    <option value="-10%">-10%</option>
-                    <option value="0%">0%</option>
-                  </select>
-                </td>
-                <td>
-                  <select>
-                    <option selected disabled="disabled">Choose a value</option>
-                    <option value="not available">not available</option>
-                    <option value="available at £5">available at 5£</option>
-                    <option value="available at £10">available at £10</option>
-                  </select>
-                </td>
-              </tr>
-            </table>
-            <table>
-              <tr>
-                <td colspan="2" class="company_name">MOBILE</td>
-              </tr>
-              <tr>
-                <td class="column2">PRICE SHIFT</td>
-                <td class="column2">UNLIMITED TARIFF</td>
-              </tr>
-              <tr>
-                <td>
-                  <select>
-                    <option selected disabled="disabled">Choose a value</option>
-                    <option value="-40%">-40%</option>
-                    <option value="-30%">-30%</option>
-                    <option value="-20%">-20%</option>
-                    <option value="-10%">-10%</option>
-                    <option value="0%">0%</option>
-                  </select>
-                </td>
-                <td>
-                  <select disabled>
-                    <option value="not available">not available</option>
-                  </select>
-                </td>
-              </tr>
-            </table>
-            <table>
-              <tr>
-                <td colspan="2" class="company_name">IOTA</td>
-              </tr>
-              <tr>
-                <td class="column2">PRICE SHIFT</td>
-                <td class="column2">UNLIMITED TARIFF</td>
-              </tr>
-              <tr>
-                <td>
-                  <select>
-                    <option selected disabled="disabled">Choose a value</option>
-                    <option value="-40%">-40%</option>
-                    <option value="-30%">-30%</option>
-                    <option value="-20%">-20%</option>
-                    <option value="-10%">-10%</option>
-                    <option value="0%">0%</option>
-                  </select>
-                </td>
-                <td>
-                  <select disabled>
-                    <option value="not available">not available</option>
-                  </select>
-                </td>
-              </tr>
-            </table>
-            <table>
-              <tr>
-                <td colspan="2" class="company_name">THETA</td>
-              </tr>
-              <tr>
-                <td class="column2">PRICE SHIFT</td>
-                <td class="column2">UNLIMITED TARIFF</td>
-              </tr>
-              <tr>
-                <td>
-                  <select>
-                    <option selected disabled="disabled">Choose a value</option>
-                    <option value="-40%">-40%</option>
-                    <option value="-30%">-30%</option>
-                    <option value="-20%">-20%</option>
-                    <option value="-10%">-10%</option>
-                    <option value="0%">0%</option>
-                  </select>
-                </td>
-                <td>
-                  <select disabled>
-                    <option value="not available">not available</option>
-                  </select>
-                </td>
-              </tr>
-            </table>
-            <table>
-              <tr>
-                <td colspan="2" class="company_name">KAPPA</td>
-              </tr>
-              <tr>
-                <td class="column2">PRICE SHIFT</td>
-                <td class="column2">UNLIMITED TARIFF</td>
-              </tr>
-              <tr>
-                <td>
-                  <select>
-                    <option selected disabled="disabled">Choose a value</option>
-                    <option value="-40%">-40%</option>
-                    <option value="-30%">-30%</option>
-                    <option value="-20%">-20%</option>
-                    <option value="-10%">-10%</option>
-                    <option value="0%">0%</option>
-                  </select>
-                </td>
-                <td>
-                  <select disabled>
-                    <option value="not available">not available</option>
-                  </select>
-                </td>
-              </tr>
-            </table>
-          </div>
+        <div class="inputs">
+          <table>
+            <tr>
+              <td colspan="2" class="company_name">BETA</td>
+            </tr>
+            <tr>
+              <td class="column2">PRICE SHIFT</td>
+              <td class="column2">UNLIMITED TARIFF</td>
+            </tr>
+            <tr>
+              <td>
+                <select>
+                  <option selected disabled="disabled">Choose a value</option>
+                  <option value="-40%">-40%</option>
+                  <option value="-30%">-30%</option>
+                  <option value="-20%">-20%</option>
+                  <option value="-10%">-10%</option>
+                  <option value="0%">0%</option>
+                </select>
+              </td>
+              <td>
+                <select>
+                  <option selected disabled="disabled">Choose a value</option>
+                  <option value="available at £5">available at 5£</option>
+                  <option value="available at £10">available at £10</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td colspan="2" class="company_name">GAMMA</td>
+            </tr>
+            <tr>
+              <td class="column2">PRICE SHIFT</td>
+              <td class="column2">UNLIMITED TARIFF</td>
+            </tr>
+            <tr>
+              <td>
+                <select>
+                  <option selected disabled="disabled">Choose a value</option>
+                  <option value="-40%">-40%</option>
+                  <option value="-30%">-30%</option>
+                  <option value="-20%">-20%</option>
+                  <option value="-10%">-10%</option>
+                  <option value="0%">0%</option>
+                </select>
+              </td>
+              <td>
+                <select>
+                  <option selected disabled="disabled">Choose a value</option>
+                  <option value="available at £5">available at 5£</option>
+                  <option value="available at £10">available at £10</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td colspan="2" class="company_name">EPSILON</td>
+            </tr>
+            <tr>
+              <td class="column2">PRICE SHIFT</td>
+              <td class="column2">UNLIMITED TARIFF</td>
+            </tr>
+            <tr>
+              <td>
+                <select>
+                  <option selected disabled="disabled">Choose a value</option>
+                  <option value="-40%">-40%</option>
+                  <option value="-30%">-30%</option>
+                  <option value="-20%">-20%</option>
+                  <option value="-10%">-10%</option>
+                  <option value="0%">0%</option>
+                </select>
+              </td>
+              <td>
+                <select>
+                  <option selected disabled="disabled">Choose a value</option>
+                  <option value="not available">not available</option>
+                  <option value="available at £5">available at 5£</option>
+                  <option value="available at £10">available at £10</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td colspan="2" class="company_name">MOBILE</td>
+            </tr>
+            <tr>
+              <td class="column2">PRICE SHIFT</td>
+              <td class="column2">UNLIMITED TARIFF</td>
+            </tr>
+            <tr>
+              <td>
+                <select>
+                  <option selected disabled="disabled">Choose a value</option>
+                  <option value="-40%">-40%</option>
+                  <option value="-30%">-30%</option>
+                  <option value="-20%">-20%</option>
+                  <option value="-10%">-10%</option>
+                  <option value="0%">0%</option>
+                </select>
+              </td>
+              <td>
+                <select disabled>
+                  <option value="not available">not available</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td colspan="2" class="company_name">IOTA</td>
+            </tr>
+            <tr>
+              <td class="column2">PRICE SHIFT</td>
+              <td class="column2">UNLIMITED TARIFF</td>
+            </tr>
+            <tr>
+              <td>
+                <select>
+                  <option selected disabled="disabled">Choose a value</option>
+                  <option value="-40%">-40%</option>
+                  <option value="-30%">-30%</option>
+                  <option value="-20%">-20%</option>
+                  <option value="-10%">-10%</option>
+                  <option value="0%">0%</option>
+                </select>
+              </td>
+              <td>
+                <select disabled>
+                  <option value="not available">not available</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td colspan="2" class="company_name">THETA</td>
+            </tr>
+            <tr>
+              <td class="column2">PRICE SHIFT</td>
+              <td class="column2">UNLIMITED TARIFF</td>
+            </tr>
+            <tr>
+              <td>
+                <select>
+                  <option selected disabled="disabled">Choose a value</option>
+                  <option value="-40%">-40%</option>
+                  <option value="-30%">-30%</option>
+                  <option value="-20%">-20%</option>
+                  <option value="-10%">-10%</option>
+                  <option value="0%">0%</option>
+                </select>
+              </td>
+              <td>
+                <select disabled>
+                  <option value="not available">not available</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td colspan="2" class="company_name">KAPPA</td>
+            </tr>
+            <tr>
+              <td class="column2">PRICE SHIFT</td>
+              <td class="column2">UNLIMITED TARIFF</td>
+            </tr>
+            <tr>
+              <td>
+                <select>
+                  <option selected disabled="disabled">Choose a value</option>
+                  <option value="-40%">-40%</option>
+                  <option value="-30%">-30%</option>
+                  <option value="-20%">-20%</option>
+                  <option value="-10%">-10%</option>
+                  <option value="0%">0%</option>
+                </select>
+              </td>
+              <td>
+                <select disabled>
+                  <option value="not available">not available</option>
+                </select>
+              </td>
+            </tr>
+          </table>
         </div>
 
         <button id="reset">RESET ALL</button>
       </div>
 
     </div>
-    <div class="vertical-line"></div>
     <div id="side-right">
       <div class="tab">
-        <button class="tabButton" onclick="openTab('circDiagram',event)">Circular Diagram</button>
-        <!-- <button class="tabButton" onclick="optenTab('histog')">Histogram</button> -->
-        <button id="barDiargram" class="tabButton" onclick="openTab('histog', event)">Histogram</button>
+        <button id="barDiagram" class="tabButton" onclick="openTab('histog', event)">Histogram</button>
+        <button class="tabButton" onclick="openTab('circDiagram',event)">Pie Chart</button>
         <button class="tabButton" onclick="openTab('table', event)">Table</button>
 
       </div>
       <div id="circDiagram" class="tab_content">
-        <div>
+          <p>*Select the variables that you wish not to evaluate by clicking on their corresponding color in the legend</p>
+          <div>
             <select id="activitySelector">
-              <option value="null">Select Value</option>
+              <option value="null" selected disabled="disabled">Select variable to evaluate</option>
               <option value="Population">Population</option>
               <option value="Volume_Baseline_Recontract">Volume Baseline Recontract</option>
               <option value="ARPU_Baseline_Recontract">ARPU Baseline Recontract</option>
@@ -300,11 +294,14 @@
       </div>
 
       <div id="histog" class="tab_content">
+        <p>*Select the variables that you wish not to evaluate by clicking on their corresponding color in the legend</p>
         <canvas height="300" id="myChart"></canvas>
       </div>
 
       <div id="table" class="tab_content">
       </div>
+      
+      <div id="default_tab" class="tab_content">Outputs here</div>
     </div>
   </div>
 

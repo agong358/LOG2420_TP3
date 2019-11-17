@@ -1,4 +1,3 @@
-
 var data;
 var consumerSeg;
 var estimatedUsage;
@@ -8,31 +7,32 @@ var myChart2;
 var context2 = document.getElementById('myChart2').getContext('2d');
 
 function randomizeTable(table, reset) {
-    if (reset)  //if want reset, return actual table
+    if (reset)  // if want reset, return actual table
         return (table);
 
-    //if input changed, return randomized table value fixed to 2 decimals.
+    // if input changed, return randomized table value fixed to 2 decimals.
     return ((table * Math.random()).toFixed(2));
 }
 
+// same code as tp2
 panel = function (el, show, hide) {
-
     var x = document.getElementById(hide);
     var y = document.getElementById(show);
     x.style.display = "none";
     y.style.display = "block";
 }
 
- function createChart(consumerSeg, estimatedUsage, randomize, reset) {
+// creates a chart 
+function createChart(consumerSeg, estimatedUsage, randomize, reset) {
     var Population = [];
-    var Volume_Baseline_Recontract = []
-    var ARPU_Baseline_Recontract = []
-    var Volume_Scenario_Recontract = []
-    var ARPU_Scenario_Recontract = []
-    var Volume_Baseline_NewCustomers = []
-    var ARPU_Baseline_NewCustomers = []
-    var Volume_Scenario_NewCustomers = []
-    var ARPU_Scenario_NewCustomers = []
+    var Volume_Baseline_Recontract = [];
+    var ARPU_Baseline_Recontract = [];
+    var Volume_Scenario_Recontract = [];
+    var ARPU_Scenario_Recontract = [];
+    var Volume_Baseline_NewCustomers = [];
+    var ARPU_Baseline_NewCustomers = [];
+    var Volume_Scenario_NewCustomers = [];
+    var ARPU_Scenario_NewCustomers = [];
 
     if (randomize === true) {
         consumerSeg.forEach(obj => {
@@ -47,6 +47,7 @@ panel = function (el, show, hide) {
             ARPU_Scenario_NewCustomers.push(randomizeTable(obj["ARPU.Scenario.NewCustomers"], reset))
         })
     }
+
     else {
         consumerSeg.forEach(obj => {
             Volume_Baseline_Recontract.push(obj["Volume.Baseline.Recontract"])
@@ -61,9 +62,14 @@ panel = function (el, show, hide) {
         })
     }
 
+    // Conversions in percentage
+    function conversion(array) {
+        for (var i = 0; i < array.length; i++) {
+            array[i] = (array[i] * 100);
+        }
+    }
 
-    //Conversion in percentage
-
+    // Rounds the percentage up
     function conversionWithMax(array) {
         var max = 0;
         for (var i = 0; i < array.length; i++) {
@@ -74,11 +80,6 @@ panel = function (el, show, hide) {
         }
     }
 
-    function conversion(array) {
-        for (var i = 0; i < array.length; i++) {
-            array[i] = (array[i] * 100);
-        }
-    }
     conversion(Population)
     conversion(Volume_Baseline_Recontract)
     conversionWithMax(ARPU_Baseline_Recontract)
@@ -89,28 +90,36 @@ panel = function (el, show, hide) {
     conversion(Volume_Scenario_NewCustomers)
     conversionWithMax(ARPU_Scenario_NewCustomers)
 
-
     // Global Options
     Chart.defaults.global.defaultFontFamily = 'Arial';
     Chart.defaults.global.defaultFontSize = 10;
     Chart.defaults.global.defaultFontColor = '#777';
 
-    var createdChart = null;
+    // When the user inputs something, a pie chart and a histogram are generated
     document.getElementById("side-left").addEventListener("change", function () {
         barDiagram()
         createPieChart()
     })
-    document.getElementById("barDiargram").addEventListener("click", function () {
+
+    // Histrogram is generated and appears when the "Histogram" is selected
+    document.getElementById("barDiagram").addEventListener("click", function () {
         barDiagram()
     })
 
-
+    // Pie chart is generated and appears when the "Circular Diagram" is selected
     var select = document.getElementById("activitySelector");
     select.addEventListener("change", function () {
         createPieChart()
     })
 
+    // A new histogram is generated
+    //let massPopChart
+    function barDiagram() {
+        myChart && myChart.destroy()
+        myChart = new Chart(context, data_)
+    }
 
+    // A new pie chart is generated depending on the user's selection
     function createPieChart(){
             switch (select.value) {
                 case "Population":
@@ -122,7 +131,7 @@ panel = function (el, show, hide) {
                 case "ARPU_Baseline_Recontract":
                     afficherDiagrammeCirculaire(ARPU_Baseline_Recontract)
                     break;
-                case "Volume_Scenario_Recontract":
+                case "Volume_Scenario_Recontract": 
                     afficherDiagrammeCirculaire(Volume_Scenario_Recontract)
                     break;
                 case "ARPU_Scenario_Recontract":
@@ -145,7 +154,7 @@ panel = function (el, show, hide) {
             }
     }
     
-
+    // Styling the histogram
     var data_ = {
         type: 'bar',
         data: {
@@ -232,13 +241,11 @@ panel = function (el, show, hide) {
                     hoverBorderWidth: 3,
                     hoverBorderColor: '#000'
                 },
-
-
             ]
-
         },
 
 
+        // Styling of different aspects of the histogram content
         options: {
             title: {
                 display: true,
@@ -272,9 +279,8 @@ panel = function (el, show, hide) {
             }
         }
     }   
-
-
-
+    
+    // To display the pie chart
     function afficherDiagrammeCirculaire(array) {
         var data2_ = {
             type: 'pie',
@@ -290,10 +296,10 @@ panel = function (el, show, hide) {
             options: {
                 title: {
                     display: true,
-                    text: 'Comparaisons'
+                    text: 'Comparaisons',
+                    fontSize: 25
                 }
             }
-    
         }
 
         myChart2 && myChart2.destroy()
@@ -301,10 +307,4 @@ panel = function (el, show, hide) {
         
     }
 
-    //let massPopChart
-    function barDiagram() {
-        myChart && myChart.destroy()
-        myChart = new Chart(context, data_)
-             
-    }
 }

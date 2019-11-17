@@ -2,10 +2,9 @@ var imported = document.createElement('script');
 imported.src = '../graphe.js';
 document.head.appendChild(imported);
 
-
 var isReset = true; //condition to show a reset table or not
 var count = 1;  // Counter for switchOutput()
-fetchTable("table", false);    // Sets the initial json table with fetch (see function below)
+fetchTable("table", false);  // Sets the initial json table with fetch (see function below)
 
 function resetSelect() {
   var selections = document.getElementsByTagName("select");
@@ -13,6 +12,7 @@ function resetSelect() {
       // l'option selectionnee sera la premiere option
       selections[i].selectedIndex = 0;
   }
+
   isReset = true;
   fetchTable("table", false);
 }

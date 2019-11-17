@@ -6,10 +6,11 @@
   outline: none;
 }
 
-
   html, body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
+    margin:0;
+    padding:0;
   }
 
   header {
@@ -19,31 +20,48 @@
     color: white;
     text-align: center;
   }
-    
-  h3 {
-      text-align: center;
-      font-weight: 300;
-      margin-top: 0;
-    }
   
+  h3 {
+    text-align: center;
+    font-weight: 300;
+    margin-top: 0;
+    }
+
   .container {
     background: beige;
     padding: 15px;
-    height: 100%;
     display: flex;
-  }
-  
-  /* #main-container {
-    position: relative;
+    overflow: hidden;
     width: 100%;
-    height: 100%;
-    background: beige;
-  } */
+    min-width: 100%;
+  }
 
   .container > #side-right {
     width: 100%;
   }
 
+  .container > #side-left {
+    width: 60%;
+    height: 100%;
+  }
+
+  #side-left{
+    /* background-color: aqua; */
+    float: left;
+    padding: 15px;
+    height: 100%;
+  }
+  
+  #side-right {
+    /* background-color: burlywood; */
+    float: right;
+    height: 100%;
+  }
+  
+  #host {
+    height: 30%;
+  }
+  
   .section_title {
     display: inline-block;
     padding-top: 10px;
@@ -54,6 +72,11 @@
     font-size: 20px;
     color: white;
     text-align: center;
+  }
+  
+  .inputs{
+    text-align: center;
+    /* height: auto; */
   }
 
   table {
@@ -68,84 +91,32 @@
   table td, table th {
     border: 1px solid black;
   }
+
   table tr:first-child th {
-      border-top: 0;
+    border-top: 0;
   }
+  
   table tr:last-child td {
-      border-bottom: 0;
+    border-bottom: 0;
   }
+
   table tr td:first-child,
   table tr th:first-child {
-      border-left: 0;
+    border-left: 0;
   }
+  
   table tr td:last-child,
   table tr th:last-child {
-      border-right: 0;
+    border-right: 0;
   }
-
-  #side-left{
-    /* background-color: aqua; */
-    width: 50%;
-    float: left;
-    padding: 15px;
-    height: 100%;
-  }
-
-  #side-right{
-    /* background-color: burlywood; */
-    width: 49%;
-    float: right;
-    height: 100%;
-  }
-
-  .inputs{
-    text-align: center;
-    /* height: auto; */
-  }
-
-  .column_3 {
-    float: left;
-    width: 33.33%;
-  }
-
-  .column_2 {
-    float: left;
-    width: 50%;
-  }
-
-  #scrollbar {
-    overflow-y: auto;
-    height: 85%;
-  }
-
-  #host {
-    height: 30%;
-  }
-
-  .vertical-line {
-    width: 3px;
-    background-color: black;
-    height: 100%;
-    float: left;
-    margin-left: 4px;
-  }
-
-  .inputs {
-    margin-bottom: 10px;
+  
+  .company_name{
+    background-color: #b3b3b3;
   }
 
   .column3 {
     width: 33%;
-    background-color: #d9d9d9;
-  }
-
-  .column2 {
-    width: 50%;
-    background-color: #d9d9d9;
-  }
-
-  .company_name{
-    background-color: #b3b3b3;
+    background-color: #cccccc;
   }
 
   select {
@@ -156,6 +127,19 @@
 
   select:hover {
     background: rgb(242, 242, 242);
+  }
+  
+  select:disabled {
+    background-color: #e6e6e6;
+  }
+  
+  #company-separator {
+    margin: 40px;
+  }
+
+  .column2 {
+    width: 50%;
+    background-color: #cccccc;
   }
 
   #competitors {
@@ -195,19 +179,40 @@
     background-color: #bfbfbf;
   }
 
+  #default_tab {
+    display: block;
+    height: 715px;
+    text-align: center;
+    padding: 357px 0;
+  }
+
+  p {
+    color: red;
+  }
+
+  #circDiagram {
+    height: 715px;
+  }
+
+  /*s'agit du id d'un des onglets; ne pas se melanger avec le tag table*/
+  #table {
+    height: auto;
+  }
 
   .tab_content {
     margin-top: 60px;
-    height: auto;
+    /* height: 715px; */
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
   }
 
-  /* @media (max-width: 600px) {
-    .tab_content: 
-  } */
+  @media (max-width: 600px) {
+    body {
+        overflow-x: auto;
+    }
+}
   
  
 
