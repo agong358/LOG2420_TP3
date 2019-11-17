@@ -1,5 +1,5 @@
 var imported = document.createElement('script');
-imported.src = '../graphe.js';
+imported.src = './graphe.js';
 document.head.appendChild(imported);
 
 var isReset = true; //condition to show a reset table or not

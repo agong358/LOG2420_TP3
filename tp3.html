@@ -5,7 +5,7 @@
   <title>Scénario d'élasticité-prix</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="/tp3.css">
+  <link rel="stylesheet" type="text/css" href="./tp3.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
@@ -274,7 +274,7 @@
 
       </div>
       <div id="circDiagram" class="tab_content">
-          <p>*Select the variables that you wish not to evaluate by clicking on their corresponding color in the legend</p>
+          <p>Select the scenario and elements to view</p>
           <div>
             <select id="activitySelector">
               <option value="null" selected disabled="disabled">Select variable to evaluate</option>
@@ -293,24 +293,17 @@
       </div>
 
       <div id="histog" class="tab_content">
-        <p>*To toggle viewing options, click on the corresponding color in the legend</p>
-        <!--<p>*Select the variables that you wish to not evaluate by clicking on their corresponding color in the legend</p>-->
+        <p>Toggle viewing options by clicking on the corresponding color in the legend</p>
         <canvas height="300" id="myChart"></canvas>
       </div>
 
-      <div id="table" class="tab_content">
-      </div>
-      
+      <div id="table" class="tab_content"></div>
       <div id="default_tab" class="tab_content">Outputs here</div>
     </div>
   </div>
 
   <footer></footer>
-
-  <script src="/tp3.js">
-
-  </script>
+  <script src="./tp3.js"></script>
 
 </body>
-
 </html>
