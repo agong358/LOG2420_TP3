@@ -3,7 +3,6 @@ imported.src = '../graphe.js';
 document.head.appendChild(imported);
 
 var isReset = true; //condition to show a reset table or not
-var count = 1;  // Counter for switchOutput()
 fetchTable("table", false);  // Sets the initial json table with fetch (see function below)
 
 function resetSelect() {
@@ -15,14 +14,6 @@ function resetSelect() {
 
   isReset = true;
   fetchTable("table", false);
-}
-
-function randomizeTable(table, reset) {
-  if (reset)  //if want reset, return actual table
-    return (table);
-
-  //if input changed, return randomized table value fixed to 2 decimals.
-  return ((table * Math.random()).toFixed(2));  
 }
 
 /* Waits until the HTML document has been completely loaded and parsed 
@@ -55,6 +46,19 @@ function openTab(tabName, evt) {
 
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
+}
+
+/**
+ * Randomize a table value depending on the res
+ * @param {int} table value to be randomized
+ * @param {bool} reset condition to randomize
+ */
+function randomizeTable(table, reset) {
+  if (reset)  //if want reset, return actual table
+    return (table);
+
+  //if input changed, return randomized table value fixed to 2 decimals.
+  return ((table * Math.random()).toFixed(2));  
 }
 
 /**
@@ -164,7 +168,7 @@ function fetchTable(elementID, randomized) {
     isReset = false;  //table values will be different
 
     //Display graphe 
-    
+  
   })
   
   // Displays the error

@@ -1,12 +1,13 @@
 # Log2420
 
+Pour le tp3, on utilise encore le dossier Server et JSON car nous allons utiliser le fichier output2.json.
+
 �quipe 18
 Alice Gong    1961605
 Charles Jiang 1957162
 
 Notre dossier "Serveur" contient:
 - Un fichier serveur.js fourni pour le TP
-- Un dossier " Images " qui contient les figures "fig3.png" et "fig4.png";
 - Un dossier JSON qui contient "output2.json" (il s'agit des donn�es JSON fournies).
 
 
@@ -18,6 +19,6 @@ Instructions pour run le serveur localement
 						$ npm install express --save)
 
 
-Ensuite, il suffit d'ouvrir le tp2.html dans Google Chrome. (Ou autre browser)
+Ensuite, il suffit d'ouvrir le html dans Google Chrome. (Ou autre browser)
 
 
