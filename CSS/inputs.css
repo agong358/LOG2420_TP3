@@ -30,6 +30,7 @@
     background: beige;
     padding: 15px;
     height: 100%;
+    display: flex;
   }
   
   /* #main-container {
@@ -38,6 +39,10 @@
     height: 100%;
     background: beige;
   } */
+
+  .container > #side-right {
+    width: 100%;
+  }
 
   .section_title {
     display: inline-block;
@@ -199,6 +204,10 @@
     border: 1px solid #ccc;
     border-top: none;
   }
+
+  /* @media (max-width: 600px) {
+    .tab_content: 
+  } */
   
  
 
