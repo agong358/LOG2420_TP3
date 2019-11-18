@@ -13,8 +13,11 @@ Charles Jiang 1957162
 3 - Jouer avec les entrées, basculer entre les différents onglets et choisir les options voulues pour la tâche.
    
 Les couleurs des compagnies des entrées correspondent à leur couleur respectif dans le diagramme circulaire.
+En cliquant sur les rectangles de couleurs, on arrive à filtrer les options de ce que l'usager veut voir.
+De plus, chaque nouvelle entrée va générer un nouvel graphe ou afficher des nouvelles valeurs dans le tableau, simulant les différences entre les différentes scénario.
 
-De plus, en cliquant sur les rectangles de couleurs, on arrive à filtrer les options de ce que l'usager veut voir.
+Finalement, le bouton RESET permet de réinitialiser toutes les sélections des entrées, ainsi que le tableau de base.
+
     
 Nos fichiers:
 - tp3.html  : code html 
